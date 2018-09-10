@@ -212,44 +212,43 @@ Index = find(V5 > 20);
 %liste des indices des valeurs de V5 superieur à 20
 
 % A ecrire
-Va = randi(10,1,10);
-Vb = randi(10,1,10);
+Va = randi(10,1,10)
+Vb = randi(10,1,10)
 
-Vmax = max(Va, Vb);
-Vmin = min(Va, Vb);
+Vmax = max(
 
-% sans utiliser la fonction max
+% correction
+%t = Va > Vb
+%Umax = t.*Va + ~t.*Vb
 
-t = Va > Vb;
-Umax = t.*Va + ~t.*Vb;
 
 %% EXERCICE 4 : opérations arithmétiques sur vecteurs et matrices
 
 % A tester
 
-Mat1 = randi(20, 5, 5)
+%Mat1 = randi(20, 10, 10)
 
-Mat2 = randi (20, 5, 5)
+%Mat2 = randi (20, 10, 10)
 
-VecLigne = randi (20, 1, 5)
+%VecLigne = randi (20, 1, 10)
 
-VecCol = VecLigne' % equivalent a VecCol = transpose (VecLigne)
+%VecCol = VecLigne' % equivalent a VecCol = transpose (VecLigne)
  
 %
 % % Addition et soustraction - fonctionne sur des matrices de meme taille
 %
- %%%%%%%%%%%J'EN SUIS ICI%%%%%%%%%%%%ù
-   Mat3 = Mat1 + Mat2
-   Mat4 = Mat1 - Mat2
+  
+%   Mat3 = Mat1 + Mat2
+%   Mat4 = Mat1 - Mat2
    
 %
 % % Somme des éléments d'une matrice
 % 
 
- S1 = sum(VecLigne)
- S2 = sum(VecCol)
- S3 = sum(Mat1) % somme colonne par colonne
- S4 = sum(Mat1, 1) % idem 
+% S1 = sum(VecLigne)
+% S2 = sum(VecCol)
+% S3 = sum(Mat1) % somme colonne par colonne
+% S4 = sum(Mat1, 1) % idem 
 % S5 = sum(Mat1, 2) % somme ligne par ligne
 
 
@@ -257,28 +256,28 @@ VecCol = VecLigne' % equivalent a VecCol = transpose (VecLigne)
 % % Multiplication de deux matrices (attention a la coherence des dimensions)
 % 
 
- Mat5 = Mat1*Mat2
+% Mat5 = Mat1*Mat2
 
- Mat6 = Mat1 .* Mat2
+% Mat6 = Mat1 .* Mat2
 
- Vec1 = Mat1 * VecCol
+% Vec1 = Mat1 * VecCol
  
- Vec2 = VecLigne * Mat2
+% Vec2 = VecLigne * Mat2
  
- Mat7 = VecCol * VecLigne
-
- ProduitScalaire =  VecLigne * VecCol
+% Mat7 = VecCol * VecLigne
+ 
+% ProduitScalaire =  VecLigne * VecCol
 
 %
 % % Inversion et resolution de systeme lineaire
 % 
 
- InvMat3 = inv(Mat3) % inverser une matrice (si elle est inversible)
+% InvMat3 = inv(Mat3) % inverser une matrice (si elle est inversible)
 
 
 % Res = Mat3\VecCol
 % ou
- Res1= InvMat3*VecCol
+% Res1= InvMat3*VecCol
  
 
 %% EXERCICE 5 : affichage 
