@@ -29,8 +29,8 @@ public class Account {
       Set<Transaction> wanted_transactions = new HashSet<Transaction>();
       //depuis la date donnée à maintenant
       //copier les éléments dans le nouveau Set
-      for(Transaction i: this){
-        if(i.getDate()>date)
+      for(Transaction i: this.transactions){
+        if(i.getDate().after(date))
           wanted_transactions.add(i);
       }
       return wanted_transactions;

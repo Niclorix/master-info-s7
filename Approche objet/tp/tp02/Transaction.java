@@ -6,7 +6,7 @@ public class Transaction {
     private double amount;
 
     public Transaction(String title, double amount) {
-        this.date = getTime(); //Affecter la date à aujourd'hui
+        this.date = new Date(); //Affecter la date à aujourd'hui
         this.title = title;
         this.amount = amount;
     }
