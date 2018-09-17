@@ -227,29 +227,29 @@ Umax = t.*Va + ~t.*Vb;
 
 % A tester
 
-Mat1 = randi(20, 5, 5)
+Mat1 = randi(20, 5, 5);
 
-Mat2 = randi (20, 5, 5)
+Mat2 = randi (20, 5, 5);
 
-VecLigne = randi (20, 1, 5)
+VecLigne = randi (20, 1, 5);
 
-VecCol = VecLigne' % equivalent a VecCol = transpose (VecLigne)
+VecCol = VecLigne'; % equivalent a VecCol = transpose (VecLigne)
  
 %
 % % Addition et soustraction - fonctionne sur des matrices de meme taille
 %
  %%%%%%%%%%%J'EN SUIS ICI%%%%%%%%%%%%ù
-   Mat3 = Mat1 + Mat2
-   Mat4 = Mat1 - Mat2
+   Mat3 = Mat1 + Mat2;
+   Mat4 = Mat1 - Mat2;
    
 %
 % % Somme des éléments d'une matrice
 % 
 
- S1 = sum(VecLigne)
- S2 = sum(VecCol)
- S3 = sum(Mat1) % somme colonne par colonne
- S4 = sum(Mat1, 1) % idem 
+ S1 = sum(VecLigne);
+ S2 = sum(VecCol);
+ S3 = sum(Mat1); % somme colonne par colonne
+ S4 = sum(Mat1, 1); % idem 
 % S5 = sum(Mat1, 2) % somme ligne par ligne
 
 
@@ -257,28 +257,28 @@ VecCol = VecLigne' % equivalent a VecCol = transpose (VecLigne)
 % % Multiplication de deux matrices (attention a la coherence des dimensions)
 % 
 
- Mat5 = Mat1*Mat2
+ Mat5 = Mat1*Mat2;
 
- Mat6 = Mat1 .* Mat2
+ Mat6 = Mat1 .* Mat2;
 
- Vec1 = Mat1 * VecCol
+ Vec1 = Mat1 * VecCol;
  
- Vec2 = VecLigne * Mat2
+ Vec2 = VecLigne * Mat2;
  
- Mat7 = VecCol * VecLigne
+ Mat7 = VecCol * VecLigne;
 
- ProduitScalaire =  VecLigne * VecCol
+ ProduitScalaire =  VecLigne * VecCol;
 
 %
 % % Inversion et resolution de systeme lineaire
 % 
 
- InvMat3 = inv(Mat3) % inverser une matrice (si elle est inversible)
+ InvMat3 = inv(Mat3); % inverser une matrice (si elle est inversible)
 
 
 % Res = Mat3\VecCol
 % ou
- Res1= InvMat3*VecCol
+ Res1= InvMat3*VecCol;
  
 
 %% EXERCICE 5 : affichage 
@@ -289,66 +289,67 @@ VecCol = VecLigne' % equivalent a VecCol = transpose (VecLigne)
 % % Affichage d'une courbe définie par les coordonnées de ses points
 %
 
-% X = -10:0.1:10;
-% Y = normpdf(X, 0, 1);
+X = -10:0.1:10;
+Y = normpdf(X, 0, 1);
 
-% plot(X, Y)
+%plot(X, Y)
 % ou 
-% plot(X, Y, 'g--x')
+%plot(X, Y, 'r--x');
 % ou 
-% scatter(X, Y)
+scatter(X, Y)
 
 %
 % % On peut superposer plusieurs affichage dans la meme figure
 %
 
-% Y2 = normpdf(X, 3, 2);
-% hold on;
-% plot(X, Y)
-% plot(X, Y2)
-% hold off; 
+Y2 = normpdf(X, 3, 2);
+hold on;
+plot(X, Y)
+plot(X, Y2)
+hold off; 
 
 %
 % % On peut creer plusieurs figures en meme temps
 %
-% close all % pour fermer d'autres figures creees precedemment
-% figure('Name', 'loi normale de moyenne 0')
-% plot(X, Y)
-% figure('Name', 'loi normale de moyenne 3')
-% plot(X, Y2)
-
+close all; % pour fermer d'autres figures creees precedemment
+figure('Name', 'loi normale de moyenne 0');
+plot(X, Y);
+figure('Name', 'loi normale de moyenne 3');
+plot(X, Y2);
+close all;
 
 %
 % % utilisation de la fonction parabole (fichier parabole.m)
 %
 
 
-% axis auto;
-% X = -100: 100;
-% Y = parabole(X);
-% plot(X, Y)
+axis auto;
+X = -100: 100; %vecteur de -100 -99 ... 98 99 100
+Y = parabole(X);
+%plot(X, Y);
 
 % ou 
-% fplot('parabole',[-100 100])
+%fplot('parabole',[-100 100]);
 
 %
 % % en 3D
 %
 
+close all;
 
-% mu = [0 0];
-% sigma = [2 1; 1 3];
+mu = [0 0];
+sigma = [2 1; 1 3];
 
-% x1 = -10:0.5:10;
-% y1 = -10:0.5:10;
+x1 = -10:0.5:10;
+y1 = -10:0.5:10;
 
-% [X,Y] = meshgrid(x1, y1);
+[X,Y] = meshgrid(x1, y1);
 
-% Z = mvnpdf([X(:) Y(:)], mu, sigma);
+Z = mvnpdf([X(:) Y(:)], mu, sigma);
 
-% S = reshape(Z,length(x1),length(y1));
+S = reshape(Z,length(x1),length(y1));
 
-%surf(x1, y1, S);
+surf(x1, y1, S);
 % ou 
 % scatter3(X(:), Y(:), Z)
 
@@ -361,10 +362,31 @@ VecCol = VecLigne' % equivalent a VecCol = transpose (VecLigne)
 % A ecrire
 % ...
 
+%% FINALE : Regression lineaire
 
+close all;
 
+m=40;
+sizeNoise=10;
+x = rand(m,1).*50+5;
+noise = rand(m,1) * sizeNoise;
+pente = 0.8;
+c = 20;
+y = c+pente*x + noise;
+scatter(x, y);
+hold on;
 
+tmp = m*sum(x.*y)-(sum(x)*sum(y));
+tmp2 = m*sum(x.*x)-(sum(x)*sum(x));
+teta_1 = tmp/tmp2;
+teta_0 = (sum(y)- teta_1*sum(x))/m;
 
+x1=0;
+y1=teta_0;
 
+x2=50;
+y2=teta_1*x2+teta_0;
 
+plot([x1 x2],[y1 y2]);
+hold on;
 

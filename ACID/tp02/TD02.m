@@ -39,7 +39,7 @@ for i=-80:20:80
     
     plot([i;i+10],[parabole(i);tg],'r')
     
-    pause(3);
+    pause(1);
 end
 
 
