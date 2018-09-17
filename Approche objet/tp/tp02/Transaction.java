@@ -1,17 +1,17 @@
 import java.util.*;
 
 public class Transaction {
-    private String date;
+    private Date date;
     private String title;
     private double amount;
 
     public Transaction(String title, double amount) {
-        //Affecter la date à aujourd'hui
+        this.date = getTime(); //Affecter la date à aujourd'hui
         this.title = title;
         this.amount = amount;
     }
 
-    public String getDate() {
+    public Date getDate() {
         return this.date;
     }
 
@@ -23,3 +23,6 @@ public class Transaction {
         return this.amount;
     }
 }
+
+//Date d = new Date(95,6, 12);//06/12/1995
+//getTimt() -> donne le nome de secondes

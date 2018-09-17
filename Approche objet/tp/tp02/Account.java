@@ -1,7 +1,6 @@
 import java.util.*;
 
-import java.util.HashSet;
-import java.util.Objects;
+
 
 public class Account {
     private double balance;
@@ -23,8 +22,18 @@ public class Account {
         //TODO_3
     }
 
-    public Set<Transaction> getTransactionSince(String date) {
-        return this.transactions;
+    public Set<Transaction> getTransactionSince(Date date) {
+      //TODO_1
+      //il faut retourner une copie
+      //sinon on peut la modifier ultérieurement
+      Set<Transaction> wanted_transactions = new HashSet<Transaction>();
+      //depuis la date donnée à maintenant
+      //copier les éléments dans le nouveau Set
+      for(Transaction i: this){
+        if(i.getDate()>date)
+          wanted_transactions.add(i);
+      }
+      return wanted_transactions;
     }
 
 
