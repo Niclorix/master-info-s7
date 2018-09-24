@@ -41,25 +41,40 @@ for i=-80:20:80
     pause(0.2)
 end
 
-%%EX1.1%%
+%%EX1.1 et 1.2%%
 
 coef = [3 1 1];
 x = [10 20 30];
-valeurPolynome(x, coef)
+v = valeurPolynome(x, coef)
+w = derivPoly(v)
 
 function[valeur] = valeurPolynome(x, coefs)
-l = length(coefs);
-puissance = 0:l-1
-tx = repmat(x, l, 1);
+l = length(coefs); %nb de coefficients
+puissance = 0:l-1; %donne les puissance 0 1 2 ...
+tx = repmat(x, l, 1) %repmat([10 20 30], 3, 1)
 valeur = coefs*(tx.^(puissance')); 
 end
-
-
 % ' pour faire la transposée
 %transposée d'une matrice = colonnes deviennent ligne et vice versa
 
+%repmat :
+%repmat([10 20 30],3,1) =
+%    10    20    30
+%    10    20    30
+%    10    20    30
+
+%repmat :
+%repmat([10 20 30],3,2) =
+%    10    20    30    10    20    30
+%    10    20    30    10    20    30
+%    10    20    30    10    20    30
 %%EX1.3%%
 
-%coeffDeriv = derivPoly(coef)
+function[deriv] = derivPoly(coef)
+l=length(coef);
+puissance=0:l-1;
+deriv=coef.*puissance;
+deriv(1)=[];
+end
 
 
