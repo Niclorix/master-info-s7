@@ -13,7 +13,7 @@ plot(X, Y)
 dY = diff(Y)./diff(X);
 length(X)
 length(dY)
-
+0
 % Comparer la courbe suivante :
 plot(X(:, 1:length(X)-1),dY,'r')
 
@@ -39,9 +39,15 @@ for i=-80:20:80
     
     plot([i;i+10],[parabole(i);tg],'r')
     
-    pause(1);
+    pause(0.2);
 end
 
 
+coef = [3 1 1]
+x = [10 20 30]
+puissance = [0 1 2]
 
+l = length(coef)
+tx = repmat(x, l, 1)
+valeur = coef*(tx.^(puissance'))
 
