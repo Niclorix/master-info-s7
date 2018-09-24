@@ -1,8 +1,6 @@
-package fr.ubordeaux.ao;
+import java.util.*;
 
 public class Line {
-    int x1;
-    int y1;
-    int x2;
-    int y2;
+    Point a;
+    Point b;
 }

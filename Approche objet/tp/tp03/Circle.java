@@ -1,7 +1,6 @@
 import java.util.*;
 
 public class Circle {
-    int centerX;
-    int centerY;
+    Point center;
     int radius;
 }

@@ -1,8 +1,7 @@
-package fr.ubordeaux.ao;
+import java.util.*;
 
 public class Rectangle {
-    int x;
-    int y;
+    Point x;
     int width;
     int height;
 }
