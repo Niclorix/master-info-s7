@@ -19,7 +19,7 @@ public class Account {
 
     public void addTransaction(Transaction transaction) {
         transactions.add(transaction);
-        //TODO_3
+        this.transactions.amount += transaction.amount;
     }
 
     public Set<Transaction> getTransactionSince(Date date) {
@@ -34,6 +34,10 @@ public class Account {
           wanted_transactions.add(i);
       }
       return wanted_transactions;
+    }
+
+    public void deleteTransaction(Transaction transaction) {
+      this.transactions.remove(transaction);
     }
 
 
