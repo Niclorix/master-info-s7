@@ -3,7 +3,7 @@ import java.util.*;
 public class Ellipse extends Circle {
     public double radius2;
 
-    public Ellipse(){
+    /*public Ellipse(){
       super();
       this.radius2 = 0.0;
     }
@@ -27,5 +27,5 @@ public class Ellipse extends Circle {
       Point p = new Point(5.0,-8.0);
       Ellipse e = new Ellipse(p, 5.2, 53.0);
       System.out.println(e.toString());
-    }
+    }*/
 }

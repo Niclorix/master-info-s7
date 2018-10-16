@@ -22,12 +22,12 @@ public class Rectangle extends Shape{
     return Math.abs(b.getY()-b.getY());
   }
   @Override
-  public double area() {
+  public double getArea() {
     return this.getWidth()*this.getHeight();
   }
 
   @Override
-  public double perimeter() {
+  public double getPerimeter() {
     return 2 * (this.getWidth()+this.getHeight());
   }
 
