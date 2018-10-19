@@ -1,5 +1,7 @@
-import java.util.*;
 package domain;
+
+import java.util.*;
+import domain.Price;
 
 public class Reference {
     private String id;

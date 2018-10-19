@@ -1,6 +1,7 @@
-import java.util.*;
 package infrastructure;
+
 import domain.*;
+import java.util.*;
 
 public class CatalogImpl implements Catalog {
   private Map<String, Reference> references;

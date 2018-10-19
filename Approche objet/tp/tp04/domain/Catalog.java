@@ -1,5 +1,7 @@
-import java.util.*;
 package domain;
+
+import java.util.*;
+import infrastructure.*;
 
 
 public interface Catalog {
