@@ -1,6 +1,8 @@
-package infrastructure;
+package fr.ubordeaux.ao.infrastructure;
 
-import domain.*;
+import fr.ubordeaux.ao.domain.Catalog;
+import fr.ubordeaux.ao.domain.Reference;
+
 import java.util.*;
 
 public class CatalogImpl implements Catalog {
@@ -13,7 +15,8 @@ public void addReference(Reference reference);
 public void removeReference(Reference reference);*/
 
   public CatalogImpl(){
-    Map<String, Reference> references = new HashMap<String, Reference>();
+    @SuppressWarnings("unused")
+	Map<String, Reference> references = new HashMap<String, Reference>();
   }
 
   public int size(){

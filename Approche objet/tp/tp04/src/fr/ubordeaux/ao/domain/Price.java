@@ -1,4 +1,4 @@
-package domain;
+package fr.ubordeaux.ao.domain;
 
 public class Price{
   private int cents;

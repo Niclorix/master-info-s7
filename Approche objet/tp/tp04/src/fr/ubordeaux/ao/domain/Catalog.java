@@ -1,8 +1,6 @@
-package domain;
+package fr.ubordeaux.ao.domain;
 
 import java.util.*;
-import infrastructure.*;
-
 
 public interface Catalog {
   public int size();
