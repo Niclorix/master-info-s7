@@ -24,6 +24,8 @@ def deroulementRandom(b):
     b.push(RandomMove(b))
     deroulementRandom(b)
     b.pop()
+
+# EXERCICE 1.1
 nbnoeuds=0
 nbgames=0
 def devtotal(b):
