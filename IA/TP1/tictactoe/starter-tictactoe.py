@@ -39,6 +39,29 @@ def devtotal(b):
         devtotal(b)
         b.pop()
 
+# ##CORRECTION DE JSPQUOI
+# def minGagnant(board):
+#     if game_is_over(board):
+#         return getresult(b) == 1
+#     all_true = True
+#     for move in:
+#         b.push(move)
+#         if maxGagnant(2)== False:
+#             return False
+#         b.pop()
+#     return True
+#
+# def maxGagnant(board):
+#     if b.game_is_over():
+#         return get_result(b)
+#     vaeur = 1
+#     for move in b.legal_moves():
+#         b.push(move)
+#         meilleur = max(meilleur, minGagnant(b))
+#         b.pop()
+#         return meilleur
+# ##fin  correction
+
 
 def getresult(b):
     '''Fonction qui évalue la victoire (ou non) en tant que X. Renvoie 1 pour victoire, 0 pour
