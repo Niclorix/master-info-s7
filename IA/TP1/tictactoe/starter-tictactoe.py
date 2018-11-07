@@ -52,15 +52,15 @@ def minGagnant(board):
         board.pop()
     return True
 #
-# def maxGagnant(board):
-#     if b.game_is_over():
-#         return get_result(b)
-#     vaeur = 1
-#     for move in b.legal_moves():
-#         b.push(move)
-#         meilleur = max(meilleur, minGagnant(b))
-#         b.pop()
-#         return meilleur
+def maxGagnant(board):
+    if b.game_is_over():
+        return get_result(b)
+    vaeur = 1
+    for move in b.legal_moves():
+        b.push(move)
+        meilleur = max(meilleur, minGagnant(b))
+        b.pop()
+        return meilleur
 # ##fin  correction
 
 

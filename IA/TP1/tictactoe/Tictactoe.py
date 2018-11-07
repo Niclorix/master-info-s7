@@ -13,12 +13,14 @@ class Board:
     def __init__(self):
         #_nextPlayer = joueur qui va jouer (X par défaut)
         #_board = le jeu en lui même (un tableau)
-        #
+        #_alignements = ???
+        #_stack = la pile pour stocker les mouvements
       self._nextPlayer = self._X
       self._board = []
       for x in range(3):
-          self._board.append([self._E] * 3)
+          self._board.append([self._E] * 3) #on ajoute .........
 
+          #self.board = [[ '.' '.' '.'] [ '.' '.' '.'] [ '.' '.' '.']]
       self._alignments = []
       for x in range(3):
           a = []
@@ -36,8 +38,10 @@ class Board:
 
     def _get_an_alignment(self):
         for a in self._alignments:
-            if (self._board[a[0][0]][a[0][1]] != self._E) and (self._board[a[0][0]][a[0][1]] == self._board[a[1][0]][a[1][1]]) and (self._board[a[0][0]][a[0][1]] == self._board[a[2][0]][a[2][1]]):
-                    return  self._board[a[0][0]][a[0][1]]
+            first_cell = self._board[a[0][0]][a[0][1]]
+            #second_cell
+            if (first_cell != self._E) and (first_cell == self._board[a[1][0]][a[1][1]]) and (first_cell == self._board[a[2][0]][a[2][1]]):
+                    return first_cell
         return None
 
     def _has_an_alignment(self):
