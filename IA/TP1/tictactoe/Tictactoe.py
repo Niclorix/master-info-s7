@@ -2,9 +2,9 @@
 
 class Board:
     '''Classe permettant de jouer au morpion. Elle semble assez longue mais elle illustre
-       le fonctionnement classique des jeux de plateau, en fournissant des méthodes que 
+       le fonctionnement classique des jeux de plateau, en fournissant des méthodes que
        l'on retrouvera plus tard avec le jeu des échecs'''
-    _X = 'X' 
+    _X = 'X'
     _O = 'O'
     _E = '.' # empty
 
@@ -25,7 +25,7 @@ class Board:
           self._alignments.append(a)
           self._alignments.append(amirror)
       self._alignments.append([(0,0),(1,1),(2,2)])
-      self._alignments.append([(2,0),(1,1),(0,2)]) 
+      self._alignments.append([(2,0),(1,1),(0,2)])
 
       self._stack= [] # Used to keep track of push/pop moves
 
@@ -44,14 +44,14 @@ class Board:
                 if self._board[x][y] == self._E:
                    return True
         return False
-                
+
     def is_game_over(self):
         '''Test si le jeu est terminé'''
         if self._has_an_alignment():
             return True
         if self._at_least_one_empty_cell():
             return False
-        return True 
+        return True
 
     def result(self):
         '''Retourne le vainqueur du jeu'''
@@ -73,11 +73,11 @@ class Board:
            l'état dans lequel il était avant de jouer.'''
         move = self._stack.pop()
         [player,x,y] = move
-        self._nextPlayer = player 
+        self._nextPlayer = player
         self._board[x][y] = self._E
 
     def legal_moves(self):
-        '''Une fonction importante : elle permet de retourner tous les coups possibles 
+        '''Une fonction importante : elle permet de retourner tous les coups possibles
            pour le plateau de jeu courant'''
         moves = []
         for x in range(3):
@@ -85,6 +85,17 @@ class Board:
                 if self._board[x][y] == self._E:
                     moves.append([self._nextPlayer,x,y])
         return moves
+
+def explore_all_moves(board):
+    global nbgames, nbnodes
+    nbnodes = +=1;
+    if board.is_game_over():
+        nbgames+=1
+        return
+    for m in board.legal_moves:
+        board.push(m)
+        explore_all_moves(b)
+        board.pop()
 
     def _piece2str(self, c):
         if c == self._O:
@@ -104,5 +115,3 @@ class Board:
         return toreturn
 
     __repr__ = __str__
-
-
