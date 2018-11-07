@@ -4,13 +4,14 @@ import time
 import Tictactoe
 from random import randint,choice
 
+
+
 def RandomMove(b):
     '''Renvoie un mouvement au hasard sur la liste des mouvements possibles'''
     return choice(b.legal_moves())
 
 def deroulementRandom(b):
     '''Effectue un déroulement aléatoire du jeu de morpion.'''
-    print("----------")
     print(b)
     if b.is_game_over():
         res = getresult(b)
@@ -25,31 +26,31 @@ def deroulementRandom(b):
     deroulementRandom(b)
     b.pop()
 
+
 # EXERCICE 1.1
 nbnoeuds=0
 nbgames=0
-def devtotal(b):
+def devtotal(bo):
     global nbnoeuds, nbgames
     nbnoeuds+=1
-    if b.is_game_over():
+    if bo.is_game_over():
         nbgames+=1
         return
-    for m in b.legal_moves():
-        b.push(m)
-        devtotal(b)
-        b.pop()
+    for m in bo.legal_moves():
+        bo.push(m)
+        devtotal(bo)
+        bo.pop()
 
 # ##CORRECTION DE JSPQUOI
-# def minGagnant(board):
-#     if game_is_over(board):
-#         return getresult(b) == 1
-#     all_true = True
-#     for move in:
-#         b.push(move)
-#         if maxGagnant(2)== False:
-#             return False
-#         b.pop()
-#     return True
+def minGagnant(board):
+    if game_is_over(board):
+        return getresult(board) == 1
+    for move in board.legal_moves:
+        board.push(move)
+        if maxGagnant(2)== False:
+            return False
+        board.pop()
+    return True
 #
 # def maxGagnant(board):
 #     if b.game_is_over():

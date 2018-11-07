@@ -8,9 +8,13 @@ class Board:
     _O = 'O'
     _E = '.' # empty
 
-    def __init__(self):
-      self._nextPlayer = self._X
 
+
+    def __init__(self):
+        #_nextPlayer = joueur qui va jouer (X par défaut)
+        #_board = le jeu en lui même (un tableau)
+        #
+      self._nextPlayer = self._X
       self._board = []
       for x in range(3):
           self._board.append([self._E] * 3)
@@ -26,8 +30,9 @@ class Board:
           self._alignments.append(amirror)
       self._alignments.append([(0,0),(1,1),(2,2)])
       self._alignments.append([(2,0),(1,1),(0,2)])
-
       self._stack= [] # Used to keep track of push/pop moves
+
+
 
     def _get_an_alignment(self):
         for a in self._alignments:
@@ -45,6 +50,7 @@ class Board:
                    return True
         return False
 
+    'TRUE -> game over | FALSE -> game not over'
     def is_game_over(self):
         '''Test si le jeu est terminé'''
         if self._has_an_alignment():
@@ -53,6 +59,7 @@ class Board:
             return False
         return True
 
+    'Retourne le joueur gagnant'
     def result(self):
         '''Retourne le vainqueur du jeu'''
         return self._get_an_alignment()
@@ -86,17 +93,6 @@ class Board:
                     moves.append([self._nextPlayer,x,y])
         return moves
 
-def explore_all_moves(board):
-    global nbgames, nbnodes
-    nbnodes = +=1;
-    if board.is_game_over():
-        nbgames+=1
-        return
-    for m in board.legal_moves:
-        board.push(m)
-        explore_all_moves(b)
-        board.pop()
-
     def _piece2str(self, c):
         if c == self._O:
             return 'O'
@@ -106,12 +102,14 @@ def explore_all_moves(board):
             return '.'
 
     def __str__(self):
-        toreturn=""
+        toreturn="     #######\n"
         for l in self._board:
+            toreturn += "     # "
             for c in l:
                 toreturn += self._piece2str(c)
+            toreturn += " #"
             toreturn += "\n"
-        toreturn += "Next player: " + ("X" if self._nextPlayer == self._X else "O") + "\n"
+        toreturn +=  "     #######\n" + "Next player: " + ("X" if self._nextPlayer == self._X else "O") + "\n"
         return toreturn
 
     __repr__ = __str__
