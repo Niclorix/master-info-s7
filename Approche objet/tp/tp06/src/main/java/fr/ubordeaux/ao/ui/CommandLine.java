@@ -1,6 +1,9 @@
 package fr.ubordeaux.ao.ui;
 
+import java.util.*;
 import java.io.IOException;
+import fr.ubordeaux.ao.domain.exception.QuestionExamException;
+
 
 public class CommandLine {
     public static void main(String[] args) {
